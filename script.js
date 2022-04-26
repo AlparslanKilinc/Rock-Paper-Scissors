@@ -18,12 +18,15 @@ function Game(){
        let Comp=computerPlay();
        let result= PlayRound(Comp,Player);
        console.log(result[0]);
-       console.log('Your Wins:'+UserWins);
        if(result[1]===1){
            UserWins++;
        }else if(result[1]===-1){
            ComputerWins++;
+       }else{
+           i--;
        }
+       console.log('Your Wins:'+UserWins);
+       console.log('Computer Wins:'+ComputerWins);
     }
 
     if(UserWins>ComputerWins){
@@ -35,7 +38,16 @@ function Game(){
     }
 
 function UserPlay(){
-        return window.prompt("Enter Your Move:");
+    let options=['rock','scissors','paper'];
+    let input = window.prompt(" Rock Paper or Scissors,Enter Your Move:");
+    /// Catch Errors
+    try{
+        if(!options.includes(input)) throw 'notOption';
+    }catch(e){
+        alert('Input has to be a Rock,Scissors or Paper');
+        return UserPlay();
+    }
+        return input;
     }
 
     
