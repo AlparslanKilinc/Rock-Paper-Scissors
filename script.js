@@ -1,8 +1,4 @@
-console.log('Welcome To Rock Paper Scissors');
 
-
-let as = Game();
-console.log(as);
 
 function Game(){ 
     let UserWins=0;
@@ -24,7 +20,6 @@ function Game(){
        console.log('Your Wins:'+UserWins);
        console.log('Computer Wins:'+ComputerWins);
     }
-    }
 
     if(UserWins>ComputerWins){
      return 'Game Over , You Won';
@@ -32,16 +27,16 @@ function Game(){
     else if (ComputerWins>UserWins){
      return 'Game Over ,You Lost !'
     }else return 'Tie Game';
-    }
+}
 
 function UserPlay(){
     let options=['rock','scissors','paper'];
-    let input = window.prompt(" Rock Paper or Scissors,Enter Your Move:");
+    
     /// Catch Errors
     try{
         if(!options.includes(input)) throw 'notOption';
     }catch(e){
-        alert('Input has to be a Rock,Scissors or Paper');
+        console.log('Input has to be a Rock,Scissors or Paper');
         return UserPlay();
     }
         return input;
@@ -52,9 +47,9 @@ function computerPlay(){
         let randomNumber= Math.round(Math.random()*2);
         if(randomNumber==0) return 'rock';
         else if(randomNumber==1)return 'paper';
-        else return 'scissors';
-           
+        else return 'scissors';  
     }
+
 
 function PlayRound(computerSelection, playerSelection){
         switch(playerSelection){
