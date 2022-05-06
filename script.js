@@ -4,16 +4,12 @@ console.log('Welcome To Rock Paper Scissors');
 let as = Game();
 console.log(as);
 
-
-
-
-
 function Game(){ 
     let UserWins=0;
     let ComputerWins=0; 
    
 
-    for(let i=0; i<5; i++){
+   while(UserWins<5 && ComputerWins <5){ 
        let Player= UserPlay().toLowerCase();
        let Comp=computerPlay();
        let result= PlayRound(Comp,Player);
@@ -27,6 +23,7 @@ function Game(){
        }
        console.log('Your Wins:'+UserWins);
        console.log('Computer Wins:'+ComputerWins);
+    }
     }
 
     if(UserWins>ComputerWins){
