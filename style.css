@@ -5,29 +5,79 @@ html,body{
     background: linear-gradient(45deg, rgb(1, 18, 41), transparent);
     display: flex;
     flex-direction: column;
+    gap: 1em;
  }
  body{
     min-height: 100vh;
  }
+
+
  header{
      display: flex;
      align-items: center;
      justify-content: center;
+     
  }
 
+
+ .Score{
+     display: flex;
+     flex: 0.2;
+     justify-content: space-around;
+ }
+
+
  .Selection{
-     flex: 1;
+     display: flex;
+     flex-direction: column;
+     flex: 2;
+     justify-content: center;
+     align-items: center;
  }
  .options{
      display: flex;
-     gap: 2em;
+     gap: 10em;
  }
  .rock,.paper,.scissors{
-     
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
  }
+ img{
+    width: 150px;
+}
+
+
+
  .Results{
+     display: flex;
+     flex-direction: column;
      flex: 1;
  }
+ .head{
+     display: flex;
+     justify-content: space-around;
+ }
+ .end-images{
+     display: flex;
+     flex: 1;
+     justify-content: space-around;
+
+ }
+ .user,.comp,.result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+ }
+ .user{
+     margin-left:10em;
+ }
+ .comp{
+     margin-right:12em;
+ }
+
  footer{
      display: flex;
      justify-content: center;
