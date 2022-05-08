@@ -1,87 +1,98 @@
 
+// The DOM
+let UserWins=0;
+let ComputerWins=0; 
 
-function Game(){ 
-    let UserWins=0;
-    let ComputerWins=0; 
-   
+let res = document.querySelector('.result');
 
-   while(UserWins<5 && ComputerWins <5){ 
-       let Player= UserPlay().toLowerCase();
-       let Comp=computerPlay();
-       let result= PlayRound(Comp,Player);
-       console.log(result[0]);
-       if(result[1]===1){
-           UserWins++;
-       }else if(result[1]===-1){
-           ComputerWins++;
+const buttons = document.querySelectorAll('button');
+    buttons.forEach((button)=>{
+    button.addEventListener('click',()=>{
+       let UW =UserWins;
+       let CW =ComputerWins;
+       let input= button.className;
+       if(UW<5 || CW<5){
+        let scores=Game(input,res);
        }else{
-           i--;
+        if(UW>CW)
+        {
+         res.textContent='Game Over,You Won';
+        }
+     else{
+         res.textContent='Game Over,You Lost';
+         }
        }
-       console.log('Your Wins:'+UserWins);
-       console.log('Computer Wins:'+ComputerWins);
-    }
+    });
+});
 
-    if(UserWins>ComputerWins){
-     return 'Game Over , You Won';
-    }
-    else if (ComputerWins>UserWins){
-     return 'Game Over ,You Lost !'
-    }else return 'Tie Game';
+
+/// Functions
+
+
+   
+ 
+
+function Game(input,res){ 
+  
+            let Comp=computerPlay();
+            let result= PlayRound(Comp,input);
+    
+            if(result==1){
+                UserWins++;
+                res.textContent='You Win';
+            }else if(result==-1){
+                ComputerWins++;
+                res.textContent='You Lose';
+            }else{
+             res.textContent='Tie';
+            }
+        
+           
 }
 
-function UserPlay(){
-    let options=['rock','scissors','paper'];
-    
-    /// Catch Errors
-    try{
-        if(!options.includes(input)) throw 'notOption';
-    }catch(e){
-        console.log('Input has to be a Rock,Scissors or Paper');
-        return UserPlay();
-    }
-        return input;
-    }
-
-    
 function computerPlay(){
         let randomNumber= Math.round(Math.random()*2);
-        if(randomNumber==0) return 'rock';
-        else if(randomNumber==1)return 'paper';
-        else return 'scissors';  
+        let computer_P = document.getElementsByClassName('comp-pic');
+        if(randomNumber==0){
+            computer_P.src='/Images/Rock.png';
+            console.log('Computer Play: paper');
+            return 'paper';
+        } 
+        else if(randomNumber==1){
+            computer_P.src='/Images/Paper.png';
+            console.log('Computer Play: Rock');
+            return 'rock';
+        }
+        else{
+            computer_P.src='/Images/Scissors.png';
+            console.log('Computer Play: Scissors');
+            return 'scissors';
+        }
     }
 
 
 function PlayRound(computerSelection, playerSelection){
         switch(playerSelection){
          case 'rock':
-             if(computerSelection==='scissors') return ['You Win Rock Beats Scissors',1];
-             else if(computerSelection==='rock') return ['Tie Round'];
-             else return ['You Lose Rock Loses To Paper',-1];
-             break;
+             if(computerSelection==='scissors') return 1;
+             else if(computerSelection==='rock') return 0;
+             else return -1;
+            
      
          case 'paper':
-             if(computerSelection==='rock') return ['You Win Paper Beats Rock',1];
-             else if(computerSelection==='paper') return ['Tie round'];
-             else return ['You Lose Paper Loses To Scissors',-1];
-             break;
+             if(computerSelection==='rock') return 1;
+             else if(computerSelection==='paper') return 0;
+             else return -1;
+            
      
          case 'scissors':
-                 if(computerSelec==='paper') return ['You Win Scissors Beats Paper',1];
-                 else if(computerSelec==='scissors') return ['Tie Round'];
-                 else return ['You Lose Scissors Loses to Rock',-1];
+                 if(computerSelection==='paper') return 1;
+                 else if(computerSelection==='scissors') return 0;
+                 else return -1;
         }
+    }
 
 
 
 
 
-
-
-
-
-
-  
-    
-   
-
-}
