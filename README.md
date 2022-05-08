@@ -1,4 +1,4 @@
 # RockPaperScissors
-ROCK PAPER SCISSORS Project with JavaScript
+ROCK PAPER SCISSORS Game using HTML/CSS/Javascript
 
 Live: https://alparslankilinc.github.io/RockPaperScissors/
