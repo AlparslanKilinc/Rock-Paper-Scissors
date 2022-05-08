@@ -53,13 +53,11 @@ function computerPlay(){
         let computer_P = document.querySelector('#C_img');
         if(randomNumber==0){
             computer_P.src='/Images/Rock.png';
-            console.log('Computer Play: paper');
-            return 'paper';
+            return 'rock';
         } 
         else if(randomNumber==1){
             computer_P.src='/Images/Paper.png';
-            console.log('Computer Play: Rock');
-            return 'rock';
+            return 'paper';
         }
         else{
             computer_P.src='/Images/Scissors.png';
