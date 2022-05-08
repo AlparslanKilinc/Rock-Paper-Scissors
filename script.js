@@ -52,15 +52,15 @@ function computerPlay(){
         let randomNumber= Math.round(Math.random()*2);
         let computer_P = document.querySelector('#C_img');
         if(randomNumber==0){
-            computer_P.src='./Images/Rock.png';
+            computer_P.src="./Images/Rock.png" ;
             return 'rock';
         } 
         else if(randomNumber==1){
-            computer_P.src='./Images/Paper.png';
+            computer_P.src="./Images/Paper.png";
             return 'paper';
         }
         else{
-            computer_P.src='./Images/Scissors.png';
+            computer_P.src="./Images/Scissors.png";
             console.log('Computer Play: Scissors');
             return 'scissors';
         }
@@ -92,13 +92,13 @@ function userPlay(selection){
     let U_choice = document.querySelector('#U_pic');
     switch(selection){
         case 'rock':
-            U_choice.src='./Images/Rock.png';
+            U_choice.src="./Images/Rock.png" ;
             break;
         case 'paper':
-            U_choice.src='./Images/Paper.png';
+            U_choice.src="./Images/Paper.png" ;
             break;
         case 'scissors':
-            U_choice.src='./Images/Scissors.png';
+            U_choice.src="./Images/Scissors.png" ;
             break;
 
     }
