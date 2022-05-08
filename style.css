@@ -44,9 +44,17 @@ html,body{
     flex: 1;
     justify-content: center;
     align-items: center;
+    
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+      
  }
  img{
     width: 120px;
+}
+.selected{
+    border: 3px solid red;
 }
 
 
@@ -78,3 +86,5 @@ html,body{
      padding: 0;
      margin: 0;
  }
+
+
