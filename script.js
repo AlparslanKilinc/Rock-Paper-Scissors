@@ -34,12 +34,12 @@ function Game(input,res){
     
             if(result==1){
                 UserWins++;
-            P_Score.textContent=`Player Score: ${UserWins}`;
+            P_Score.textContent=`${UserWins}`;
                 res.textContent='You Win';
             }else if(result==-1){
                 ComputerWins++;
                 res.textContent='You Lose';
-                C_Score.textContent=`Computer Score: ${ComputerWins}`;
+                C_Score.textContent=`${ComputerWins}`;
             }else{
              res.textContent='Tie';
             }
