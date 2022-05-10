@@ -6,23 +6,60 @@ let ComputerWins=0;
 let res = document.querySelector('.result');
 let C_Score= document.querySelector('.ComputerWins');
 let P_Score= document.querySelector('.PlayerWins');
+let center = document.querySelector('.center-box');
+let endScreen = document.querySelector('.endScreen');
+let EndMessage = document.querySelector('.EndMessage');
+
+let computer_P = document.querySelector('#C_img');
+let U_choice = document.querySelector('#U_pic');
+
+let R = document.querySelector('.Results');
+let S = document.querySelector('.Selection');
 
 
 
-const buttons = document.querySelectorAll('button');
-    buttons.forEach((button)=>{
-    button.addEventListener('click',()=>{
-    let UW =UserWins;
-    let CW =ComputerWins;
-    let input= button.className;
-   
-    if(UW<5 && CW<5){
-        userPlay(input);
-        Game(input,res);
-    } 
+
+
+const rocks = document.querySelector('.rock');
     
+    rocks.addEventListener('click',()=>{
+            let UW =UserWins;
+            let CW =ComputerWins;
+            let input= rocks.className;
+           
+            if(UW<5 && CW<5){
+                userPlay(input);
+                Game(input,res);
+            } 
     });
-});
+
+    const papers = document.querySelector('.paper');
+    
+    papers.addEventListener('click',()=>{
+            let UW =UserWins;
+            let CW =ComputerWins;
+            let input= papers.className;
+           
+            if(UW<5 && CW<5){
+                userPlay(input);
+                Game(input,res);
+            } 
+    });
+
+    const scissors = document.querySelector('.scissors');
+    
+    scissors.addEventListener('click',()=>{
+            let UW =UserWins;
+            let CW =ComputerWins;
+            let input= scissors.className;
+           
+            if(UW<5 && CW<5){
+                userPlay(input);
+                Game(input,res);
+            } 
+    });
+
+
 
 
    
@@ -43,14 +80,13 @@ function Game(input,res){
             }else{
              res.textContent='Tie';
             }
-            if(ComputerWins>=5 || UserWins>=5) checkResult();
-        
-           
+            if(ComputerWins>=5 || UserWins>=5) replay();
+
 }
 
 function computerPlay(){
         let randomNumber= Math.round(Math.random()*2);
-        let computer_P = document.querySelector('#C_img');
+        
         if(randomNumber==0){
             computer_P.src="./Images/Rock.png" ;
             return 'rock';
@@ -61,7 +97,7 @@ function computerPlay(){
         }
         else{
             computer_P.src="./Images/Scissors.png";
-            console.log('Computer Play: Scissors');
+            
             return 'scissors';
         }
     }
@@ -89,7 +125,7 @@ function PlayRound(computerSelection, playerSelection){
     }
 
 function userPlay(selection){
-    let U_choice = document.querySelector('#U_pic');
+    
     switch(selection){
         case 'rock':
             U_choice.src="./Images/Rock.png" ;
@@ -109,20 +145,36 @@ function userPlay(selection){
 function checkResult(){
     if(UserWins>ComputerWins)
 {
-res.textContent='Game Over,You Won';
-document.getElementById('#endScreen').style.display='flex';
- 
+EndMessage.textContent='Game Over You Won';
 }
 else if(ComputerWins>UserWins){
-res.textContent='Game Over,You Lost';
-document.getElementById('#endScreen').style.display='flex';
- 
+EndMessage.textContent='Game Over You Lost';
  }
 
 }
 
 function replay(){
+  
+    R.style.display='none';
+    center.style.display='none';
+    S.style.display='none';
+    endScreen.style.display='flex';
+    checkResult();
+}
 
+function restart(){
+    UserWins=0;
+    ComputerWins=0;
+    P_Score.textContent=`${UserWins}`;
+    C_Score.textContent=`${ComputerWins}`;
+    endScreen.style.display='none';
+    center.style.display = 'none';
+    R.style.display='flex';
+    S.style.display='flex';
+    U_choice.src="./Images/Qmark.png";
+    computer_P.src="./Images/Qmark.png";
+   
+    
 }
 
 
