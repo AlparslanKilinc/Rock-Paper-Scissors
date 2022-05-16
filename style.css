@@ -128,6 +128,8 @@ button:active {
  footer{
      display: flex;
      justify-content: center;
+     align-items: center;
+     gap: 2em;
      padding: 1.3%;
      
  }
@@ -157,7 +159,7 @@ button:active {
 
  /* Github logo Animation */
  .fa-github {
-    color:red;
+    color:rgb(228, 228, 228);
     font-size: 24px;
     transition: transform 0.3s ease-in-out;
   }
