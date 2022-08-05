@@ -3,4 +3,4 @@
 * First To 5 Wins
 * Rematch Capability
 
-Live: https://alparslankilinc.github.io/RockPaperScissors/
+Live: https://alparslankilinc.github.io/Rock-Paper-Scissors/
