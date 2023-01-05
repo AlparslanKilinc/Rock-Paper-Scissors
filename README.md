@@ -1,4 +1,6 @@
-# RockPaperScissors
-ROCK PAPER SCISSORS Game using HTML/CSS/Javascript
+# Rock Paper Scissors Game
 
-Live: https://alparslankilinc.github.io/RockPaperScissors/
+* First To 5 Wins
+* Rematch Capability
+
+Live: https://alparslankilinc.github.io/Rock-Paper-Scissors/
