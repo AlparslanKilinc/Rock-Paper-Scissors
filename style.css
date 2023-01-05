@@ -3,62 +3,100 @@
     src: url(Fonts/PressStart2P-Regular.ttf);
 }
 
+/* Mobile */
+@media screen and (min-width: 320px) {
+    header{
+        font-size: 14px;
+    }
+    .rock,.paper,.scissors{
+        width: 100px;
+        height: 100px;
+    }
+    img{
+        width: 75px;
+        height: 75px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 680px) {
+    header{
+        font-size: 28px;
+    }
+    .rock,.paper,.scissors{
+        width: 150px;
+        height: 150px;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+    footer{
+     font-size: 14px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    header{
+        font-size: 32px;
+    }
+    .rock,.paper,.scissors{
+        width: 200px;
+        height: 200px;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+    } 
+}
+
 html,body{
-    margin: 0;
-    padding: 0;
     background-color:#5f78f8;
     font-family: 'PressStart';
+    height: 100%;
+
  }
  body{
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-   
+    justify-content: space-between;
+    gap:1rem;
+    max-height: 100vh;
  }
-
 
  header{
      display: flex;
      align-items: center;
      justify-content: center;
      background-color:#ffffff;
-     padding: 3%; 
+     padding: 1rem;
  }
-
-
- .Score{
-     display: flex;
-     flex: 0.1;
-     justify-content: space-around;
- }
-
-
+ h3,h2,p,h1{
+    color:#000000;
+    padding: 0;
+    margin: 0;
+}
  .Selection{
      display: flex;
      flex-direction: column;
-     flex: 1;
-     justify-content: center;
      align-items: center;
-     margin-bottom: 5%;
-     gap: 3em;
-     
+     gap: 1rem;
  }
 
  .options{
      display: flex;
-     gap: 10em;
+     padding: 2rem;
+     gap: 0.5rem;
  }
  .rock,.paper,.scissors{
     display: flex;
-    flex: 1;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    width: 150px;
-    height: 150px;
-        background-color: black;
-        background-repeat:no-repeat;
-        border-radius: 20px;
+    background-color: black;
+    background-repeat:no-repeat;
+    border-radius: 20px;
  }
  .btnReplay{
     cursor: pointer;
@@ -67,37 +105,28 @@ html,body{
     border-radius: 10px;
  }
 
-
  button:hover{
     box-shadow: 0 12px 26px 0 white, 0 17px 50px 0 white;
- }
+}
    
-
 button:active {
         background-color: transparent;
         box-shadow: 0 10px white;
         transform: translateY(4px);
-      }
- 
- 
- img{
-    width: 120px;
-    height:100px;
-    
 }
-
-
+ 
  .Results{
      display: flex;
      flex-direction: column;
-     margin-top: 3%;
+     justify-content: center;
+     align-items: center;
  }
 
  .end-images{
      display: flex;
      justify-content: center;
-     gap:10em;
-
+     align-items: center;
+     gap:4rem;
  }
 
  .user,.comp,.result{
@@ -105,55 +134,40 @@ button:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    gap: 1rem;
  }
 
  .center-box{
      display: flex;
      justify-content: center;
      align-items: center;
-     margin-top: 2%;
      
  }
  .resultz{
-    
     width: 200px;
     border-radius: 10px;
-    padding: 3%;
  }
  .result{
     color:#05111a;
  }
-
  footer{
      display: flex;
      justify-content: center;
-     padding: 1.3%;
-     
+     flex-shrink: 0;
+     margin-bottom: 1rem;
+     font-size: 14px;
  }
- h3,h2,p,h1{
-     color:#000000;
-     padding: 0;
-     margin: 0;
-     
- }
- h1{
-    color:#000000;
- }
-
- .endScreen{
+.endScreen{
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     flex: 1;
      display: none;
-     gap: 2em;
-     
  }
- .btnReplay{
+.btnReplay{
     font-family: 'PressStart';
- }
+}
+
 
 
 
